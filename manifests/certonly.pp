@@ -67,6 +67,7 @@ define certbot::certonly (
     environment => $environment,
     creates     => $live_path,
     require     => Class['certbot'],
+    refreshonly => true,
   }
 
   if $manage_cron {
